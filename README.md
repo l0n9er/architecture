@@ -1,7 +1,7 @@
 # architecture
 basic2it architecture
 
-## License
+# License
 ```
 Copyright (C) 2017 meikoz, http://basic2it.cc/
 
