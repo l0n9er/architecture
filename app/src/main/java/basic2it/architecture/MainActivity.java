@@ -3,6 +3,8 @@ package basic2it.architecture;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.net.HttpURLConnection;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

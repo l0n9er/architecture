@@ -1,4 +1,4 @@
-package com.racofix.basic2;
+package com.basic2.componts;
 
 import org.junit.Test;
 

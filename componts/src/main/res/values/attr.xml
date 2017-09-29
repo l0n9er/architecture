@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ImageTextAttr">
+        <attr name="image_text_margin" format="dimension" />
+        <attr name="image_background_id" format="reference" />
+        <attr name="text_direction" format="string|reference" />
+    </declare-styleable>
+</resources>

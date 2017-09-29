@@ -1,7 +1,4 @@
-package com.racofix.basic2;
-
-import android.text.Editable;
-import android.text.TextWatcher;
+package com.basic2.componts.net;
 
 /*
  * Copyright (C) 2017 meikoz, http://basic2it.cc/
@@ -18,11 +15,5 @@ import android.text.TextWatcher;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public abstract class EditextWatcher implements TextWatcher {
-
-    @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-    }
-
-    @Override public void afterTextChanged(Editable s) {
-    }
+public class HttpWrapper {
 }

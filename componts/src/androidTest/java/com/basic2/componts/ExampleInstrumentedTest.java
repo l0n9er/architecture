@@ -1,4 +1,4 @@
-package com.racofix.basic2;
+package com.basic2.componts;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.racofix.basic2.test", appContext.getPackageName());
+        assertEquals("com.basic2.componts.test", appContext.getPackageName());
     }
 }
