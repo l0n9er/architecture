@@ -1,8 +1,8 @@
 package com.basic2.http;
 
-import android.text.TextUtils;
-
 import okhttp3.OkHttpClient;
+
+import static com.basic2.http.HttpUtil.checkNotNull;
 
 /*
  * Copyright (C) 2017 meikoz, http://basic2it.cc/
@@ -63,15 +63,13 @@ public final class Request {
         }
 
         public Builder baseUri(String baseUri) {
-            if (TextUtils.isEmpty(baseUri)) {
-                throw new NullPointerException("url == null");
-            } else {
-                this.baseUri = baseUri;
-                return this;
-            }
+            checkNotNull(baseUri, "baseUri == null");
+            this.baseUri = baseUri;
+            return this;
         }
 
         public Builder client(OkHttpClient httpClient) {
+            checkNotNull(baseUri, "OkHttpClient == null");
             this.okHttpClient = httpClient;
             return this;
         }
@@ -82,12 +80,9 @@ public final class Request {
         }
 
         public Builder serv(Class clzz) {
-            if (clzz == null) {
-                throw new NullPointerException("serv class == null");
-            } else {
-                this.serv = clzz;
-                return this;
-            }
+            checkNotNull(baseUri, "serv class == null");
+            this.serv = clzz;
+            return this;
         }
 
         public Request build() {

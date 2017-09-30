@@ -31,6 +31,7 @@ public class ApiFactory {
     private static <T> T servs(Class<T> clzz) {
         if (request == null)
             request = new Request.Builder()
+                    .baseUri("https://api.elabels.cn/v1/api/")
                     .client(okhttp())
                     .build();
         return HttpProxyImpl.getInstance().newRequestQueue(clzz, request);

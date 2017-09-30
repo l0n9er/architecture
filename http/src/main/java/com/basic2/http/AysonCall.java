@@ -20,7 +20,8 @@ import retrofit2.Call;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public abstract class JsonCallback<T> implements Callback<T> {
+public abstract class AysonCall<T> implements Callback<T> {
+
     public abstract void successful(T response);
 
     public abstract void onFailure(Exception ex);

@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.basic2.componts.ux.ImageText;
 
-import com.basic2.http.JsonCallback;
+import com.basic2.http.AysonCall;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ImageText imageText = (ImageText) findViewById(R.id.image_text);
 
-        ApiFactory.account().login().enqueue(new JsonCallback<String>() {
+        ApiFactory.account().login().enqueue(new AysonCall<String>() {
 
             @Override
             public void successful(String response) {
