@@ -57,12 +57,6 @@ public class ImageText extends LinearLayout {
         CharSequence textString = t.getText(R.styleable.ImageTextAttr_text);
 
         t.recycle();
-        Log.v("ImageText", "margin属性值:" + margin);
-        Log.v("ImageText", "background属性值:" + background);
-        Log.v("ImageText", "mTextColor属性值:" + textColor);
-        Log.v("ImageText", "mTextSize属性值:" + Density.px2dp(context, textSize));
-        Log.v("ImageText", "textRes:" + textRes);
-        Log.v("ImageText", "textString:" + textString);
 
         mImageView = new ImageView(context);
         mImageView.setPadding(zero, zero, Density.px2dp(context, margin), zero);

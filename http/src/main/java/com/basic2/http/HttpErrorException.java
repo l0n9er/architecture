@@ -1,4 +1,6 @@
-package com.basic2.componts.net;
+package com.basic2.http;
+
+import okhttp3.ResponseBody;
 
 /*
  * Copyright (C) 2017 meikoz, http://basic2it.cc/
@@ -15,5 +17,8 @@ package com.basic2.componts.net;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class HttpWrapper {
+public final class HttpErrorException extends Exception {
+    HttpErrorException(ResponseBody string) {
+        throw new RuntimeException("Stub!");
+    }
 }

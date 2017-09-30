@@ -1,4 +1,9 @@
-package com.basic2.componts;
+package com.basic2.http;
+
+import java.io.IOException;
+
+import retrofit2.*;
+import retrofit2.Call;
 
 /*
  * Copyright (C) 2017 meikoz, http://basic2it.cc/
@@ -15,17 +20,22 @@ package com.basic2.componts;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+public abstract class JsonCallback<T> implements Callback<T> {
+    public abstract void successful(T response);
 
-import android.text.Editable;
-import android.text.TextWatcher;
-
-public abstract class EditextWatcher implements TextWatcher {
+    public abstract void onFailure(Exception ex);
 
     @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+    public void onResponse(Call<T> call, Response<T> response) {
+        if (response.isSuccessful())
+            successful(response.body());
+        else {
+            onFailure(new HttpErrorException(response.errorBody()));
+        }
     }
 
     @Override
-    public void afterTextChanged(Editable s) {
+    public void onFailure(Call<T> call, Throwable t) {
+        onFailure(new NullPointerException());
     }
 }
