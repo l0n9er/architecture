@@ -2,9 +2,14 @@ package com.basic2.componts.ux;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.Gravity;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.basic2.componts.R;
 
@@ -26,18 +31,61 @@ import com.basic2.componts.R;
 
 public class ImageText extends LinearLayout {
 
-    private float margin;
+    private final int zero = 0;
+    private ImageView mImageView;
+    private TextView mTextView;
 
     public ImageText(Context context) {
         super(context);
+        obtainAttrs(context, null);
     }
 
     public ImageText(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        obtainAttrs(context, attrs);
+    }
+
+    private void obtainAttrs(Context context, AttributeSet attrs) {
         //TODO
         TypedArray t = getContext().obtainStyledAttributes(attrs, R.styleable.ImageTextAttr);
-        margin = t.getDimension(R.styleable.ImageTextAttr_image_text_margin, 10);
+        int margin = t.getDimensionPixelSize(R.styleable.ImageTextAttr_image_text_margin, 10);
+        int background = t.getResourceId(R.styleable.ImageTextAttr_image_background, 0);
+
+        float textSize = t.getDimensionPixelSize(R.styleable.ImageTextAttr_text_size, 14);
+        int textColor = t.getColor(R.styleable.ImageTextAttr_text_color, Color.GRAY);
+        int textRes = t.getResourceId(R.styleable.ImageTextAttr_text, R.string.tip_image_text);
+        CharSequence textString = t.getText(R.styleable.ImageTextAttr_text);
 
         t.recycle();
+        Log.v("ImageText", "margin属性值:" + margin);
+        Log.v("ImageText", "background属性值:" + background);
+        Log.v("ImageText", "mTextColor属性值:" + textColor);
+        Log.v("ImageText", "mTextSize属性值:" + Density.px2dp(context, textSize));
+        Log.v("ImageText", "textRes:" + textRes);
+        Log.v("ImageText", "textString:" + textString);
+
+        mImageView = new ImageView(context);
+        mImageView.setPadding(zero, zero, Density.px2dp(context, margin), zero);
+        mImageView.setBackgroundResource(background);
+
+        mTextView = new TextView(context);
+        mTextView.setTextColor(textColor);
+        mTextView.setTextSize(Density.px2dp(context, textSize));
+        mTextView.setText(textRes);
+        mTextView.setText(textString);
+
+        setOrientation(LinearLayout.HORIZONTAL);
+        setGravity(Gravity.CENTER);
+
+        addView(mImageView);
+        addView(mTextView);
+    }
+
+    public ImageView getImageView() {
+        return mImageView;
+    }
+
+    public TextView getTextView() {
+        return mTextView;
     }
 }
