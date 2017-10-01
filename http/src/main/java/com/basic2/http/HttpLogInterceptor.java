@@ -8,7 +8,6 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.UnsupportedCharsetException;
-import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Connection;
