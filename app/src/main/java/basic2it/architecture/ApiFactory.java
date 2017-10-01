@@ -33,12 +33,12 @@ public class ApiFactory {
         if (request == null)
             request = new HttpRequest.Builder()
                     .baseUri("https://api.elabels.cn/v1/api/")
-                    .client(okhttp())
+                    .client(createClient())
                     .build();
         return HttpProxyImpl.getInstance().newRequestQueue(clzz, request);
     }
 
-    static OkHttpClient okhttp() {
+    static OkHttpClient createClient() {
         return new OkHttpClient.Builder()
                 .addNetworkInterceptor(new HttpLogInterceptor().setLevel(HttpLogInterceptor.Level.BODY))
                 .build();
