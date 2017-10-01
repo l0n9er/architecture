@@ -100,7 +100,6 @@ public class HttpLogInterceptor implements Interceptor {
 //                    logger.log("Content-Length: " + requestBody.contentLength());
 //                }
             }
-
             Headers headers = request.headers();
 //            for (int i = 0, count = headers.size(); i < count; i++) {
 //                String name = headers.name(i);
