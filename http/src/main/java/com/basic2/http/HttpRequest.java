@@ -2,7 +2,7 @@ package com.basic2.http;
 
 import okhttp3.OkHttpClient;
 
-import static com.basic2.http.HttpUtil.checkNotNull;
+import static com.basic2.http.NonNull.checkNotNull;
 
 /*
  * Copyright (C) 2017 meikoz, http://basic2it.cc/
@@ -20,14 +20,14 @@ import static com.basic2.http.HttpUtil.checkNotNull;
  * limitations under the License.
  */
 
-public final class Request {
+public final class HttpRequest {
 
     private final String baseUri;
     private final OkHttpClient okHttpClient;
     private final boolean isDeveloped;
     private final Class serv;
 
-    Request(Builder builder) {
+    HttpRequest(Builder builder) {
         this.baseUri = builder.baseUri;
         this.okHttpClient = builder.okHttpClient;
         this.isDeveloped = builder.isDeveloped;
@@ -85,8 +85,8 @@ public final class Request {
             return this;
         }
 
-        public Request build() {
-            return new Request(this);
+        public HttpRequest build() {
+            return new HttpRequest(this);
         }
     }
 }

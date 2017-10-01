@@ -7,6 +7,9 @@ import com.basic2.componts.ux.ImageText;
 
 import com.basic2.http.AysonCall;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -15,7 +18,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ImageText imageText = (ImageText) findViewById(R.id.image_text);
 
-        ApiFactory.account().login().enqueue(new AysonCall<String>() {
+        Map<String, String> params = new HashMap<>();
+        params.put("mobile", "17710928693");
+        params.put("pwd", "111111");
+        ApiFactory.account().login(params).enqueue(new AysonCall<String>() {
 
             @Override
             public void successful(String response) {

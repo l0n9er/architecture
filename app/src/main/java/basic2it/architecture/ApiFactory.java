@@ -1,7 +1,8 @@
 package basic2it.architecture;
 
+import com.basic2.http.HttpLogInterceptor;
 import com.basic2.http.HttpProxyImpl;
-import com.basic2.http.Request;
+import com.basic2.http.HttpRequest;
 
 import okhttp3.OkHttpClient;
 
@@ -22,7 +23,7 @@ import okhttp3.OkHttpClient;
  */
 public class ApiFactory {
 
-    private static Request request;
+    private static HttpRequest request;
 
     public static Api.AccountServices account() {
         return servs(Api.AccountServices.class);
@@ -30,7 +31,7 @@ public class ApiFactory {
 
     private static <T> T servs(Class<T> clzz) {
         if (request == null)
-            request = new Request.Builder()
+            request = new HttpRequest.Builder()
                     .baseUri("https://api.elabels.cn/v1/api/")
                     .client(okhttp())
                     .build();
@@ -39,6 +40,7 @@ public class ApiFactory {
 
     static OkHttpClient okhttp() {
         return new OkHttpClient.Builder()
+                .addNetworkInterceptor(new HttpLogInterceptor().setLevel(HttpLogInterceptor.Level.BODY))
                 .build();
     }
 }

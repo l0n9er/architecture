@@ -17,9 +17,9 @@ import android.support.annotation.Nullable;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-final class HttpUtil {
-    
-    static <T> T checkNotNull(@Nullable T object, String message) {
+public final class NonNull {
+
+    public static <T> T checkNotNull(@Nullable T object, String message) {
         if (object == null) {
             throw new NullPointerException(message);
         }

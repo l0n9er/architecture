@@ -1,7 +1,5 @@
 package com.basic2.http;
 
-import java.io.IOException;
-
 import retrofit2.*;
 import retrofit2.Call;
 

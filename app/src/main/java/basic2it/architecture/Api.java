@@ -1,7 +1,11 @@
 package basic2it.architecture;
 
+import java.util.Map;
+
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 /**
  * Created by Basic on 2017/9/30.
@@ -10,7 +14,7 @@ import retrofit2.http.GET;
 public interface Api {
 
     interface AccountServices {
-        @GET("api/account/login")
-        Call<String> login();
+        @POST("api/login")
+        Call<String> login(@Body Map map);
     }
 }

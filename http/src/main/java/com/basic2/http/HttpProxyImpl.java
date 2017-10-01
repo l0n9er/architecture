@@ -1,13 +1,8 @@
 package com.basic2.http;
 
-import android.support.annotation.Nullable;
-
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 
-import retrofit2.CallAdapter;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -51,7 +46,7 @@ public final class HttpProxyImpl {
      * @param <T>     type
      * @return service instance
      */
-    public <T> T newRequestQueue(Class<T> clzz, Request request) {
+    public <T> T newRequestQueue(Class<T> clzz, HttpRequest request) {
         Object serv = m_service.get(clzz);
         if (serv == null)
             synchronized (clzz) {
