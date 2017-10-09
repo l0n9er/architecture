@@ -1,1 +1,1 @@
-include ':app', ':componts', ':http'
+include ':app', ':compont', ':http'

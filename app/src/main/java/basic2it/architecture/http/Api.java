@@ -1,4 +1,4 @@
-package basic2it.architecture;
+package basic2it.architecture.http;
 
 import java.util.Map;
 

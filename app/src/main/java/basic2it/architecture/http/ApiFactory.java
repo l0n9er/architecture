@@ -1,4 +1,4 @@
-package basic2it.architecture;
+package basic2it.architecture.http;
 
 import com.basic2.http.HttpLogInterceptor;
 import com.basic2.http.HttpProxyImpl;

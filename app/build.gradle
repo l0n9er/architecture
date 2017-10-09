@@ -27,7 +27,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
-    compile project(':componts')
+    compile project(':compont')
     compile 'uk.basic2.componts:http:1.0.2'
 //    compile 'uk.basic2.componts:compont:1.0.2'
     testCompile 'junit:junit:4.12'
