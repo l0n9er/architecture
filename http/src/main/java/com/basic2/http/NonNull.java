@@ -1,7 +1,5 @@
 package com.basic2.http;
 
-import android.support.annotation.Nullable;
-
 /*
  * Copyright (C) 2017 meikoz, http://basic2it.cc/
  *
@@ -19,7 +17,7 @@ import android.support.annotation.Nullable;
  */
 public final class NonNull {
 
-    public static <T> T checkNotNull(@Nullable T object, String message) {
+    public static <T> T checkNotNull(T object, String message) {
         if (object == null) {
             throw new NullPointerException(message);
         }
